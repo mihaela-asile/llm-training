@@ -1,0 +1,214 @@
+/**
+ * Copyright (c) 2024 Quantellia LLC
+ * This source code is licensed under the MIT license found in the LICENSE file in the root directory of this source tree.
+ */
+
+.tiny-photo{
+  width: 30px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+ .page-container {
+  width: 100%;
+  margin: 0;
+  padding: 0px;
+  display:flex;
+  /* flex: 1; */
+  flex-direction: column;
+  align-items: flex-start;
+ }
+ 
+ .chat-box {
+  height: 100%;
+  /* background-color: #f2f2f2; */
+  width: 100%;
+ }
+ 
+.hidden {
+  display:none;
+  width: 0; /* Set the width to 0 when hidden */
+  transition: width 10s; /* Apply the same transition property as the "diagram-td" class */
+}
+
+table {
+  table-layout: fixed;
+  width: 100%;
+ }
+ 
+.send-plane-path {
+  /* fill:#737e86; */
+  fill:black;
+}
+
+.send-plane-path:hover {
+  /* fill:#3297c4; */
+  fill:grey;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  justify-content: flex-end;
+  bottom: 0;
+  margin: 0px 2px 15px 20px;
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  /* "inset" is default if you don't set it */
+  background-color: transparent;
+  color: black;
+}
+ 
+.error-message {
+  color: red;
+}
+
+.chat-input {
+  display: flex;
+  justify-content: flex-end;
+  vertical-align: middle;
+  /* position:absolute; */
+  bottom: 0;
+  width: 100%
+  /* background-color: cyan; */
+}
+
+.send-button-container {
+  display:inline-block;
+  background-color: transparent;
+}
+
+.chat-input button#send-btn {
+	border: none;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+  position:relative;
+ margin: 0px 7px 15px 0px;
+}
+ 
+.chat-input button#send-btn:hover {
+  color: black;
+ }
+ 
+/*****/
+/* Flex layout for main screen */
+/*****/
+.dialogue {
+  box-sizing: border-box;
+  padding: 0px 10px 0px 10px;
+  flex-grow: 1;
+  border-color: black;
+  border-width: 1px;
+  /* max-height: calc(100% - 75px); Adjust the value as needed, considering padding and spacing */
+  /* max-height: 500px; */
+
+  /* overflow-y: auto; Enable vertical scrolling when content exceeds max-height. Not needed because inner boxes scroll fine */
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smooth scrolling for dialogue */
+/****/
+.dialogue {
+  min-height: 400px;
+  max-height: 600px; /* Set your desired height */
+  overflow-y: auto;
+  scroll-behavior: smooth; /* Enable smooth scrolling */
+  --scroll-speed: 600ms; /* Adjust the speed here */
+  --scroll-easing: ease-in-out; /* Custom easing for the scroll */
+}
+
+/* Custom scroll animation */
+.dialogue {
+  scroll-behavior: unset; /* Disable native smooth scrolling */
+}
+
+.dialogue::after {
+  content: '';
+  display: block;
+  margin-top: -9999px;
+  animation: smoothScroll var(--scroll-speed) var(--scroll-easing) forwards;
+}
+
+@keyframes smoothScroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(9999px);
+  }
+}
+
+/* .dialogue {
+  flex-basis: 75%; 
+  vertical-align:top;
+  padding-top:10px;
+} */
+
+.bot-message {
+  color: black;
+  background-color: white !important;
+  padding: 10px;
+}
+
+/* Let user message appear at the right */
+.chat-message.user-message {
+  display: flex;
+  justify-content: flex-end; /* Aligns the entire message to the right */
+  border-color: black;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 8px;
+  padding: 15px 15px 15px 0px;
+}
+
+.bot-message:hover::after {
+  filter: saturate(200%);
+ }
+
+.bot-image {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+
+ .message-content {
+      display: flex;
+      flex-direction: row;
+  }
+
+.message-content .tiny-photo {
+    flex: none; /* Prevent the image from taking up remaining space */
+    margin-right: 10px; /* Add some spacing between the image and text */
+}
+
+.bot-logo {
+    flex: none; /* Prevent the image from taking up remaining space */
+    margin-right: 10px; /* Add some spacing between the image and text */
+    width:30px;
+    height:30px;
+}
+
+.message-content .chat-message {
+    flex: 1; /* Allow the text to take up remaining space */
+    word-break: break-word; /* Ensure long words break and don't overflow */
+  background-color: white;
+  color: black;
+}
+
+
+.streaming-message {
+  margin-left: 10px;
+}
+
+/* Custom scrollbar for IE, Edge, and Chrome */
+.chat-box {
+  scrollbar-width: thin;
+}
+

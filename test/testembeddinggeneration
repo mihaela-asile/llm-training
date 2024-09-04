@@ -1,0 +1,7 @@
+curl https://api.openai.com/v1/embeddings \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer sk-xxx"\
+  -d '{
+    "model": "text-embedding-ada-002",
+    "input": "Your text to be embedded"
+  }'

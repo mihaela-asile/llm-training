@@ -1,0 +1,62 @@
+
+ <!--  Copyright (c) 2024 Quantellia LLC 
+       This source code is licensed under the MIT license found in the LICENSE file in the root directory of this source tree. -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>LLM Starter</title>
+  <script src="./lib/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+  <!-- Library to convert non-html from chatgpt to html format -->
+  <script src="https://cdn.jsdelivr.net/npm/he@1.2.0/he.js"></script>
+
+  <script src="./myscript.js"></script>
+  <script src="./js/utilities.js"></script>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body style="background-color: white">
+  <div class="page-container">
+    <div id="error-container"></div>
+    <!-- Main display contains the primary dialogue window. This complex structure supports later sophistication in layout as you
+     expand the project-->
+        <div class="dialogue">
+          <div class="chat-box" id="chat-box">
+            <div class="chat-message bot-message">
+              <div class="message-content">
+                <!-- <span>
+                  Hello, welcome to the LLM Starter! This basic interface will help you begin working with large language models. <br />
+                </span> -->
+              </div>
+            </div>
+          </div>
+        </div> <!-- End of dialogue -->
+        
+        <div class="chat-input">
+          <input type="text" id="user-input" placeholder="Type your message here...">
+          <button id="send-btn" class="send-button-container">
+            <!-- svg for a send button -->
+            <svg id="Component_74_10" data-name="Component 74 10" xmlns="http://www.w3.org/2000/svg" width="28.499" height="36.601" viewBox="0 0 28.499 36.601">
+              <g id="send" transform="translate(0 5.209)">
+                <path id="Path_13411" data-name="Path 13411" d="M0,0H28.5V31.392H0Z" fill="none" />
+                <path id="Path_13412" data-name="Path 13412" d="M2.011,25.392,26,14.2,2.011,3,2,11.708,19.142,14.2,2,16.684Z" transform="translate(1 1.5)" class="send-plane-path" />
+              </g>
+              <g id="auto_awesome" transform="translate(10.083)">
+                <path id="Path_13413" data-name="Path 13413" d="M0,0H18.416V18.416H0Z" fill="none" />
+                <path id="Path_13414" class="send-plane-path" data-name="Path 13414" d="M18.069,15l-.959,2.11L15,18.069l2.11.959.959,2.11.959-2.11,2.11-.959-2.11-.959Z" transform="translate(-3.49 -3.49)" />
+              </g>
+            </svg>
+          </button>
+      </div> <!-- end of bigwindow-container -->
+  </div> <!-- end of page-container -->
+
+</body>
+
+</html>
